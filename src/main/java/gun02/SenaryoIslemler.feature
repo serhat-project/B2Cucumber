@@ -5,7 +5,7 @@ Feature: matematik islemleri
   Scenario: toplama islemi
     Given baslangic sayisi 10 olsun
     When  kullanici 3 eklediginde
-    And   kullanici 5 ekleginde
+    And   kullanici 5 eklediginde
     And   kullanici 7 eklediginde
     Then  sonuc 25 olmalidir
 
