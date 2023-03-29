@@ -36,7 +36,7 @@ public class MyStepdefsGun02 {
 
     @When("user fill username as {string}")
     public void userFillUsernameAs(String text) {
-        By locator = By.cssSelector("input[name='username']");
+        By locator = By.cssSelector("input[name='username1']");
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
     }
 
@@ -58,10 +58,6 @@ public class MyStepdefsGun02 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(lHeader));
     }
 
-    @When("ilk sayi {int} oldugunda")
-    public void ilkSayiOldugunda(int num) {
-        System.out.println(num);
-    }
 
 
 }
