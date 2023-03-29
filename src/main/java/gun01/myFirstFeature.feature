@@ -4,10 +4,11 @@ Feature: Burada feature icin aciklama yazilir
 
   # aciklama
   Scenario: hesaplama islemi senaryosu
-    Given toplama isleminde
+    Given toplama yapilacak
     When  ilk sayi 1 oldugunda
     And   ikinci sayi 2 oldugunda
     Then  sonuc 3 olmali
+
 
 
 

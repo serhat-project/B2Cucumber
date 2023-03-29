@@ -1,9 +1,9 @@
 
 Cucumber
-TDD -> Test Deriven Developmen
+TDD -> Test Driven Developmen
 BDD -> Behavioral Driven Development
 
-Gerkhin
+Gherkin
 
 Feature
     isim.feature
