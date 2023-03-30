@@ -21,6 +21,7 @@ Feature: login orangeHRM
       | Admin    | admin1234 | false  |
       | Admin    | admin123  | true   |
       | Admin1   | admin123  | false  |
+      |          |           | false  |
       | Admin    |           | false  |
       |          | admin123  | false  |
 

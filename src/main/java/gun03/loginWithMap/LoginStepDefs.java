@@ -29,9 +29,10 @@ public class LoginStepDefs {
     By lUserName = By.xpath("//input[@name='username']");
     By lPassword = By.xpath("//input[@name='password']");
     By lSubmit = By.xpath("//button[@type='submit']");
-    By lInvaliCredential = By.xpath("//p[text()='Invalid credentials']");
+    By lNotificationInvalidCredential = By.xpath("//p[text()='Invalid credentials']");
     By lUserPanel = By.cssSelector(".oxd-userdropdown-tab");
-    By lUserPanelLogoutLink = By.cssSelector("//a[text()='Logout']");
+    By lUserPanelLogoutLink = By.xpath("//a[text()='Logout']");
+    By lNotificationRequired = By.xpath("//span[text()='Required']");
 
     @Given("user on page {string}")
     public void userOnPage(String url) {
@@ -65,17 +66,24 @@ public class LoginStepDefs {
 
         for (Map<String, String> map : maps) {
 
-            sendkeys(lUserName, map.get("username"));
-            sendkeys(lPassword, map.get("password"));
+            String username = map.get("username") == null ? "" : map.get("username");
+            String password = map.get("password") == null ? "" : map.get("password");
+            sendkeys(lUserName, username);
+            sendkeys(lPassword, password);
             click(lSubmit);
 
-            if (map.get("status").equalsIgnoreCase("false")){
-                wait.until(ExpectedConditions.visibilityOfElementLocated(lInvaliCredential));
-            }else{
-                wait.until(ExpectedConditions.urlContains("dashboard"));
-                click(lUserPanel);
-                clickByAction(lUserPanelLogoutLink);
-                wait.until(ExpectedConditions.visibilityOfElementLocated(lUserName));
+            if (username.length()<=0 || password.length()<=0){
+                int numberOfNotification = username.length()<=0 && password.length()<=0 ? 2 : 1;
+                wait.until(ExpectedConditions.numberOfElementsToBe(lNotificationRequired, numberOfNotification));
+            }else {
+                if (map.get("status").equalsIgnoreCase("false")) {
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(lNotificationInvalidCredential));
+                } else {
+                    wait.until(ExpectedConditions.urlContains("dashboard"));
+                    click(lUserPanel);
+                    click(lUserPanelLogoutLink);
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(lUserName));
+                }
             }
         }
 
