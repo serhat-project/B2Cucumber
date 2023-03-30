@@ -22,6 +22,7 @@ public class StepdefsGun03 {
             System.out.println(s + " : " + (s*s));
         }
 
+
     }
 
     @Then("conclution")
