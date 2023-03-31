@@ -1,5 +1,7 @@
 Feature: DemoQA
 
+
+
   Scenario Outline: WebTable gidis
     Given kullanici "<url>" adresine gider
     And   kullanici Elements linkine tiklar
