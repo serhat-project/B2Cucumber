@@ -17,7 +17,8 @@ Feature: opencat add products to cart
     And   user login with the foolowing credentials
       | username | deneme@deneme.com |
       | password | deneme            |
-    Then  login should be successfull
+    Then  opencart login should be successfull
+
 
 
 
