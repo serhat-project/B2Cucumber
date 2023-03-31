@@ -3,8 +3,8 @@ package gun03;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import utils.Driver;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +19,7 @@ public class StepdefsGun03 {
         System.out.println(list);
 
         for (Integer s : list) {
-            System.out.println(s + " : " + (s*s));
+            System.out.println(s + " : " + (s * s));
         }
 
 
@@ -45,4 +45,14 @@ public class StepdefsGun03 {
         System.out.println(map);
         System.out.println(map.get("key1"));
     }
+
+    @Given("my maps, list of maps")
+    public void myMapsListOfMaps(DataTable table) {
+        List<Map<String, String>> maps = table.asMaps();
+        for (Map<String, String> map : maps) {
+            System.out.println(map);
+        }
+    }
+
+
 }
