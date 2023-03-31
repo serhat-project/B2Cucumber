@@ -1,0 +1,8 @@
+
+1.  https://demoqa.com   sayfasina gidin
+2.  Elements'e tiklayin
+3.  WebTables'a tiklayin
+
+4.  acilan sayfadaki tabloya 5 adet kayit girin
+
+

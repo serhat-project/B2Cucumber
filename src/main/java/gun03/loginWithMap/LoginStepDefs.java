@@ -68,6 +68,7 @@ public class LoginStepDefs {
 
             String username = map.get("username") == null ? "" : map.get("username");
             String password = map.get("password") == null ? "" : map.get("password");
+
             sendkeys(lUserName, username);
             sendkeys(lPassword, password);
             click(lSubmit);
@@ -84,6 +85,11 @@ public class LoginStepDefs {
                     click(lUserPanelLogoutLink);
                     wait.until(ExpectedConditions.visibilityOfElementLocated(lUserName));
                 }
+            }
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
 
