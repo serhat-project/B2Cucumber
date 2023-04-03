@@ -1,5 +1,4 @@
 
-@login @logout
 Feature: feature 1
 
   @login @A @B

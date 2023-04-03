@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-public class Gun05StepDefs {
+public class Gun05StepDefs{
     @Given("user multiply {int}")
     public void userMultiply(int arg0) {
         Assert.assertEquals(1, 1);
